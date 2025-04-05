@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Funcionário | C24 TECH</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .dashboard {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .welcome {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h5 {
+      font-weight: 600;
+    }
+
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <button class="btn btn-outline-danger logout-btn" onclick="logout()">Sair</button>
+    <div class="welcome">
+      <h2>Bem-vindo à sua área de funcionário, <span id="username">Funcionário</span> 👨‍💻</h2>
+      <p>Aqui você pode gerenciar os pedidos e documentos dos clientes.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <a href="pending-orders.html" class="text-decoration-none text-dark">
+          <div class="card p-4">
+            <h5>📋 Pedidos Pendentes</h5>
+            <p class="mb-0">Verifique e processe os pedidos aguardando processamento.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <a href="invoices.html" class="text-decoration-none text-dark">
+          <div class="card p-4">
+            <h5>🧾 Faturas & Recibos</h5>
+            <p class="mb-0">Emita e gerencie faturas e recibos para os clientes.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <a href="statement.html" class="text-decoration-none text-dark">
+          <div class="card p-4">
+            <h5>📊 Extrato</h5>
+            <p class="mb-0">Acompanhe suas transações e o histórico de vendas.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <a href="edit-profile.html" class="text-decoration-none text-dark">
+          <div class="card p-4">
+            <h5>⚙️ Editar Perfil</h5>
+            <p class="mb-0">Atualize suas informações pessoais e de contato.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simula um nome de usuário (futuramente puxado do token JWT)
+    document.getElementById("username").innerText = localStorage.getItem("username") || "Funcionário";
+
+    function logout() {
+      localStorage.removeItem("authToken");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

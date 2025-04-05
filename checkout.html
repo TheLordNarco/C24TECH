@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | C24 TECH</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <main class="checkout-container">
+    <h1>Finalizar Compra</h1>
+
+    <section class="order-summary">
+      <h2>Resumo do Pedido</h2>
+      <div id="cart-items"></div>
+      <p>Total: <strong id="total-amount">0 Kz</strong></p>
+    </section>
+
+    <form id="checkout-form">
+      <label for="payment-method">Método de Pagamento:</label>
+      <select id="payment-method" required>
+        <option value="multicaixa">Multicaixa</option>
+        <option value="referência bancária">Referência Bancária</option>
+        <option value="pagamento na entrega">Pagamento na Entrega</option>
+      </select>
+
+      <button type="submit">Finalizar Compra</button>
+    </form>
+
+    <p id="response-message"></p>
+  </main>
+
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

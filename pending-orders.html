@@ -1,0 +1,39 @@
+<!-- frontend/pending-orders.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos Pendentes | C24 TECH</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="bg-primary text-white p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4">Pedidos Pendentes</h1>
+      <a href="dashboard.html" class="btn btn-light btn-sm">Voltar ao Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container mt-4">
+    <h2>Lista de Pedidos Pendentes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Cliente</th>
+          <th>Produto</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="pending-orders-list">
+        <!-- Pedidos pendentes serão carregados aqui -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="assets/js/pending-orders.js"></script>
+</body>
+</html>
